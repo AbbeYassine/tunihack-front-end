@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Servici Lik | Sign In</title>
+
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../assets/css/signin_up.css" rel="stylesheet" type="text/css"/>
+
+  <script src="../../../assets/js/jquery.js"></script>
+  <script src="../../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../../assets/js/signin_up.js"></script>
+
+</head>
+<body>
+
+<div class="logmod">
+  <div class="logmod__wrapper">
+
+    <div class="logmod__container">
+      <ul class="logmod__tabs">
+        <li data-tabtar="lgm-1" class="current"><a href="/#/signin">SIGNIN</a></li>
+        <li data-tabtar="lgm-2"><a href="/#/signup">SIGNUP</a></li>
+      </ul>
+      <div class="logmod__tab-wrapper">
+        <!-- Signin -->
+        <div class="logmod__tab lgm-1 show">
+          <div class="logmod__heading">
+            <span class="logmod__heading-subtitle">ENTER_USERNAME_PASSWORD_TO_SIGN_IN</span>
+          </div>
+          <div class="logmod__form">
+            <div class="simform signin">
+              <div class="sminputs">
+                <div class="input full">
+                  <label class="string optional" for="username">USERNAME*</label>
+                  <input class="string optional" name="username" maxlength="255" id="username"
+                         placeholder="USERNAME" type="text" size="50" ng-model="user.username"/>
+                </div>
+              </div>
+              <div class="sminputs">
+                <div class="input full">
+                  <label class="string optional" for="password">PASSWORD*</label>
+                  <input class="string optional" maxlength="255" name="password" id="password"
+                         placeholder="PASSWORD" type="password" size="50" ng-model="user.password"/>
+                  <span class="hide-password">"SHOW"</span>
+                </div>
+              </div>
+              <div class="simform__actions">
+
+                <input type="submit" class="submit" name="signin" value="SIGNIN" ng-click="submit()"/>
+
+                <span class="simform__actions-sidetext">
+                <input type="checkbox" name="remember" id="remember" class="checkbox-style"/>&nbsp;
+                <label for="remember"></label>
+                <span class="checkboxText">Remember me</span>
+              </span>
+
+                <span class="simform__actions-sidetext">
+                <a class="special" role="link" href="recover.php">Forgot password/username?</a>
+              </span>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

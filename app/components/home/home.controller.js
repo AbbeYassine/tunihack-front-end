@@ -3,14 +3,14 @@
  */
 'use strict';
 angular
-    .module("serviceLik")
-    .controller("HomeController", HomeController);
+  .module("serviceLik")
+  .controller("HomeController", HomeController);
 
 HomeController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", "$location", "Service"];
 function HomeController($rootScope, $scope, uiGmapGoogleMapApi, $location, Service) {
-    Service.find({}).$promise.then(function (data) {
-        console.log(data);
-    })
+  Service.find({}).$promise.then(function (data) {
+    console.log(data);
+  })
 
 
 }
