@@ -79,7 +79,7 @@ function config($urlRouterProvider, $stateProvider, componentsUrl) {
         })
         .state('result-search', {
             url: "/result-search",
-            templateUrl: componentsUrl + "/resultSearch/result-search.html",
+            templateUrl: componentsUrl + "/result-search/result-search.html",
             controller: "ResultSearchController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -87,7 +87,7 @@ function config($urlRouterProvider, $stateProvider, componentsUrl) {
                         name: 'serviceLik',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
                         files: [
-                            componentsUrl + '/resultSearch/result-search.controller.js'
+                            componentsUrl + '/result-search/result-search.controller.js'
                         ]
                     });
                 }]
