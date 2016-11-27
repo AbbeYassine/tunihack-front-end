@@ -30,10 +30,9 @@ function HomeController($rootScope, $scope, uiGmapGoogleMapApi, $location, Servi
     $location.url("/result-search");
   };
 
-
   $scope.take = function (serviceId) {
-    Service.uservices({}).$promise.then(function (data) {
-
+    Service.useService({serviceId: serviceId}).$promise.then(function (data) {
+      
     });
   }
 
