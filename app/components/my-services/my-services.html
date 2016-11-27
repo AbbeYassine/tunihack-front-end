@@ -1,65 +1,61 @@
 <section class="results m-t-30">
-    <div class="container">
-        <div class="row">
-            <!--/col -->
-            <div class="col-sm-9">
-                <div class="widget">
-                    <div class="widget-heading widget-default b-b-0">
-                        <h3 class="widget-title text-dark">
-                            Default Heading
-                        </h3>
-                        <div class="widget-widgets">
-                            <div class="form-group sort">
-                                <select class="select form-control">
-                                    <option value="">Popular</option>
-                                    <option value="">Latest</option>
-                                    <option value="">Ending soon</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <!-- end: Widget -->
-                <div class="coupon-wrapper coupon-single featured">
-                    <div class="row">
-                        <div class="ribbon-wrapper hidden-xs">
-                            <div class="ribbon">Featured</div>
-                        </div>
-                        <div class="coupon-data col-sm-2 text-center">
-                            <img src="assets/images/bfr_overlay.jpg" class="image_service savings text-center">
-                            </img>
-                            <!-- end:Savings -->
-                        </div>
-                        <!-- end:Coupon data -->
-                        <div class="coupon-contain col-sm-7">
-                            <ul class="list-inline list-unstyled">
-                                <li class="sale label label-pink">Sale</li>
-                                <li class="popular label label-success">100% success</li>
-                                <li><span class="verified  text-success"><i
-                                        class="ti-face-smile"></i>12/12</span></li>
-                                <li><span class="used-count">78 used</span></li>
-                            </ul>
-                            <h4 class="coupon-title"><a href="#">Extra 10% Off Select Luggage + Up To $150 Back
-                                In Points For Members + Free Shipping</a></h4>
-                            <p data-toggle="collapse" data-target="#1">Shop these Shopname deals of the day to
-                                save as much...</p>
-                            <p id="1" class="collapse">Don't miss out on all the coupon savings.Get you coupon
-                                now and save big</p>
-                            <!-- end:Coupon details -->
-                        </div>
-                        <!-- end:Coupon cont -->
-                        <div class="button-contain col-sm-3 text-center">
-                            <p class="btn-code" data-toggle="modal" data-target=".couponModal"><span
-                                    class="partial-code">BTSBAGS</span> <span
-                                    class="btn-hover">Publier</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- //row -->
-                </div>
-                <!-- //coupon wrapper -->
+  <div class="container">
+    <div class="row">
+      <!--/col -->
+      <div class="col-sm-9">
+        <div class="widget">
+          <div class="widget-heading widget-default b-b-0">
+            <h3 class="widget-title text-dark">
+              Default Heading
+            </h3>
+            <div class="widget-widgets">
+              <div class="form-group sort">
+                <select class="select form-control">
+                  <option value="">Popular</option>
+                  <option value="">Latest</option>
+                  <option value="">Ending soon</option>
+                </select>
+              </div>
             </div>
+            <div class="clearfix"></div>
+          </div>
         </div>
+        <!-- end: Widget -->
+        <div class="coupon-wrapper coupon-single featured">
+          <div ng-repeat="service in services" class="coupon-wrapper row">
+            <div class="coupon-data col-sm-2 text-center">
+              <image ng-if="service.media!=''" ng-src="{{'http://10.128.1.242:3000/api'+service.media[0].path}}"
+                     class="image_service savings text-center">
+              </image>
+              <!-- end:Savings -->
+            </div>
+            <!-- end:Coupon data -->
+            <div class="coupon-contain col-sm-7">
+              <ul class="list-inline list-unstyled">
+                <li ng-repeat="category in service.categories" class="sale label label-pink">{{category.name}}</li>
+                <li class="popular label label-success">{{service.price}} dt</li>
+                <li><span class="verified  text-success"><i
+                  class="ti-face-smile"></i>12/12</span></li>
+                <li><span class="used-count">{{service.used}}</span></li>
+              </ul>
+              <h4 class="coupon-title"><a href="#">{{service.name}}</a></h4>
+              <p data-toggle="collapse" data-target="#1">{{service.description}}</p>
+              <p ng-if="service.startDate!=-1">Date de debut : {{service.startDate}}</p>
+              <p ng-if="service.endDate!=-1">Date d'expiration: {{service.endDate}}</p>
+              <!-- end:Coupon details -->
+            </div>
+            <!-- end:Coupon cont -->
+            <div class="button-contain col-sm-3 text-center" ng-if="!service.isPublic">
+              <p class="btn-code" data-toggle="modal" data-target=".couponModal"><span
+                class="partial-code">BTSBAGS</span> <span
+                class="btn-hover" ng-click="take(service.id)">Publier</span>
+              </p>
+            </div>
+          </div>
+          <!-- //row -->
+        </div>
+        <!-- //coupon wrapper -->
+      </div>
     </div>
+  </div>
 </section>
