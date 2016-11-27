@@ -45,6 +45,6 @@ function HomeController($rootScope, $scope, uiGmapGoogleMapApi, $location, Servi
   });
   $scope.changeCountry = function (index) {
     console.log(index);
-    $scope.cities = $scope.countries[$scope.s.country].cities;
+    $scope.cities = $scope.countries[$scope.search.country].cities;
   };
 }

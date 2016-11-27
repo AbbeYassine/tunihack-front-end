@@ -2,18 +2,25 @@
     <div>
         <div class="widget">
             <!-- /widget heading -->
+            <div class="widget-heading">
+                <h3 class="widget-title text-dark">
+                    Publier un service
+                </h3>
+                <div class="clearfix"></div>
+            </div>
             <div class="widget-body">
                 <form method="post" class="m-t-30">
                     <div class="form-group ">
                         <label class="control-label " for="url">price</label>
-                        <input ng-model="s.price" class="form-control" id="url" name="url" placeholder="service .."
-                               type="text"/>
+                        <input ng-model="s.price" class="form-control" id="url" name="url" placeholder="Price "
+                               type="number"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label " for="country">Country</label>
-                        <select ng-model="s.country" class="select form-control" id="country" name="category">
-                            <option value="">Select category</option>
-                            <option ng-change="changeCountry()" ng-repeat="item in countries track by $index"
+                        <select ng-change="changeCountry($index)" ng-model="s.country" class="select form-control"
+                                id="country" name="category">
+                            <option value="">Select Country</option>
+                            <option ng-repeat="item in countries track by $index"
                                     value="{{$index}}">
                                 {{item.name}}
                             </option>
@@ -29,20 +36,36 @@
                     <div class="form-group ">
                         <label class="control-label " for="url">start date</label>
                         <input ng-model="s.startDate" class="form-control" id="startDate" name="url"
-                               placeholder="service .."
+                               placeholder="jj/mm/yyyy"
                                type="text"/>
                     </div>
                     <div class="form-group ">
                         <label class="control-label " for="url">start date</label>
                         <input ng-model="s.endDate" class="form-control" id="endDate" name="url"
-                               placeholder="service .."
+                               placeholder="jj/mm/yyyy"
                                type="text"/>
+                    </div>
+                    <div class="form-group" style="width: 200px ; height: 200px">
+                        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true"
+                                            options="map.options">
+                            <ui-gmap-marker coords="marker.coords" options="marker.options"
+                                            events="marker.events"
+                                            idkey="marker.id">
+                            </ui-gmap-marker>
+
+                        </ui-gmap-google-map>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" ngf-select ng-model="picFile" name="file"
+                               accept="image/*" ngf-max-size="2MB" required
+                               ngf-model-invalid="errorFile" ngf-multiple="true">
+                        <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
                     </div>
                     <!-- Multiple Radios -->
 
                     <div class="form-group m-t-10">
                         <div>
-                            <a href ng-click="nextStep()" class="btn btn-danger btn-lg"
+                            <a href ng-click="publishService(picFile)" class="btn btn-danger btn-lg"
                                name="submit"
                                type="submit">Suivant
                             </a>

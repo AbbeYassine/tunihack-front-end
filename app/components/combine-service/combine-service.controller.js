@@ -6,9 +6,12 @@ angular
     .module("serviceLik")
     .controller("CombineServiceController", CombineServiceController);
 
-CombineServiceController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", "$location", "Service", "Category", "Country"];
-function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $location, Service, Category, Country) {
+CombineServiceController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi",
+    "$location", "Service", "Category", "Country", "Upload", "$timeout"];
+function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi,
+                                  $location, Service, Category, Country, Upload, $timeout) {
 
+    $scope.id = $location.search().id;
     $scope.categories = [];
     Category.find({}).$promise.then(function (data) {
         console.log(data);
@@ -18,6 +21,7 @@ function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $locat
         $scope.services = data;
         console.log(data);
     });
+
 
     $scope.s = {};
     $scope.nextStep = function () {
@@ -61,8 +65,63 @@ function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $locat
 
     $scope.changeCountry = function (index) {
         console.log(index);
-        $scope.cities = $scope.countries[$scope.service.country].cities;
+        $scope.cities = $scope.countries[$scope.s.country].cities;
 
+    };
+    $scope.publishService = function (file2) {
+        console.log(file2);
+        console.log($scope.service);
+        console.log($scope.id);
+        Upload.upload({
+            url: 'http://10.128.1.242:3000/api/services/publish-service',
+            data: {
+                file: file2,
+                "latitude": $scope.service.latitude,
+                "longitude": $scope.service.longitude,
+                "price": $scope.s.price,
+                "startDate": (new Date($scope.s.startDate)).getTime(),
+                "endDate": (new Date($scope.s.endDate)).getTime(),
+                "cityId": $scope.s.city,
+                "serviceId": $scope.id
+            },
+        });
+
+
+    };
+    $scope.service = {};
+    $scope.service.latitude = 36.7994983;
+    $scope.service.longitude = 10.1822465;
+
+    $scope.marker = {
+        id: 0,
+        coords: {
+            latitude: $scope.service.latitude,
+            longitude: $scope.service.longitude
+        },
+        options: {draggable: true},
+        events: {
+            dragend: function (marker, eventName, args) {
+                //$log.log('marker dragend');
+                var lat = marker.getPosition().lat();
+                var lon = marker.getPosition().lng();
+                $scope.service.latitude = lat;
+                $scope.service.longitude = lon;
+
+                $scope.marker.options = {
+                    draggable: true,
+                    labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+                    labelAnchor: "100 0",
+                    labelClass: "marker-labels"
+                };
+            }
+        }
+    };
+    $scope.map = {
+        center: {latitude: $scope.service.latitude, longitude: $scope.service.longitude},
+        zoom: 12,
+        options: {
+            scrollwheel: false
+        }
     };
 
 
