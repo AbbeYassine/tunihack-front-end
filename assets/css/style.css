@@ -3629,3 +3629,8 @@ a:hover {
 .select-item {
     background-color: #eeeeee;
 }
+.angular-google-map-container {
+    position: absolute !important;
+    height: 300px;
+    width: 300px;
+}

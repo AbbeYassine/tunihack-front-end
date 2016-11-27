@@ -2,17 +2,18 @@
  * Created by Abbes on 17/08/2016.
  */
 angular
-  .module('serviceLik', [
-    'ngAnimate',
-    'oc.lazyLoad',
-    'ui.router',
-    'uiGmapgoogle-maps',
-    'ngResource',
-    'ui.select',
-    'ngSanitize',
-    'ui.bootstrap',
-    'toaster',
-    'lbServices',
-    'ngMaterial',
-    'md-steppers'
-  ]);
+    .module('serviceLik', [
+        'ngAnimate',
+        'oc.lazyLoad',
+        'ui.router',
+        'uiGmapgoogle-maps',
+        'ngResource',
+        'ui.select',
+        'ngSanitize',
+        'ui.bootstrap',
+        'toaster',
+        'lbServices',
+        'ngMaterial',
+        'md-steppers',
+        'ngFileUpload'
+    ]);
