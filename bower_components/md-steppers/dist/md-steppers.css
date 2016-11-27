@@ -45,7 +45,7 @@ md-steppers {
 }
 
 md-steppers:not(.md-no-step-content):not(.md-dynamic-height) {
-  min-height: 272px;
+  min-height: 450px;
 }
 
 md-steppers[md-align-steppers="bottom"] {

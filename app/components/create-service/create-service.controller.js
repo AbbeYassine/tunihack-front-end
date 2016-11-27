@@ -24,9 +24,9 @@ function CreateServiceController($rootScope, $scope, $location, $q, $timeout) {
     $scope.step4.completed = true;
   };
 
-  $scope.user = {};
+  $scope.service = {};
   $scope.submit = function () {
-    console.log($scope.user)
+    console.log($scope.service)
   }
 
 

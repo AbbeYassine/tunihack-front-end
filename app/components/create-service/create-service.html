@@ -13,7 +13,8 @@
 <body>
 
 <!--markup-->
-<div style="text-align: center;margin-top: 200px">
+
+<div style="text-align: center;margin-top: 150px;margin-bottom: 500px">
   <md-card ng-init="selected = 0">
     <md-toolbar>
       <div class="md-toolbar-tools" style="background-color: #f30">
@@ -26,35 +27,32 @@
     <md-steppers md-selected="selected" md-stretch-steppers="always">
       <md-step label="Service" md-complete="step1.completed" ng-disabled="step1.disabled">
         <md-content>
-          <h1>
-            Content Step 1
-          </h1>
+          <!-- Select Basic -->
+          <md-input-container>
+            <label>Selectionner une catégorie</label>
+            <md-select ng-model="service.category">
+              <md-option><em>None</em></md-option>
+              <md-option ng-repeat="state in ctrl.states" ng-value="state.Id">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
 
-          <div class="row">
-            <!-- Select Basic -->
-            <div class="form-group col-sm-6 col-xs-12">
-              <label class="control-label " for="category">Select category</label>
-              <select class="select form-control" id="category" name="category">
-                <option value="Electronics">Electronics</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Kids">Kids</option>
-              </select>
+
+          <div layout-gt-xs="row">
+            <div flex-gt-xs>
+              <h4>Date de publication</h4>
+              <md-datepicker ng-model="service.publish_date" md-placeholder="Date de publication"></md-datepicker>
             </div>
-            <div class="form-group col-sm-6 col-xs-12">
-              <label class="control-label " for="store">Select a store</label>
-              <select class="select form-control" id="store" name="store">
-                <option value="Shopname">Shopname</option>
-                <option value="Ebay">Ebay</option>
-                <option value="Ebay">Shopname</option>
-                <option value="Ebay">Hostgator</option>
-                <option value="Ebay">Ebay</option>
-                <option value="Bangdoo">Bangdoo</option>
-              </select>
+
+            <div flex-gt-xs>
+              <h4>Date d'Expiration</h4>
+              <md-datepicker ng-model="service.expiration_date" md-placeholder="Date d\'Expiration"></md-datepicker>
             </div>
           </div>
-          
+
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="step1()">NEXT
+                     ng-click="step1()">SUIVANT
           </md-button>
         </md-content>
       </md-step>
@@ -63,11 +61,20 @@
           <h1>
             Content Step 2
           </h1>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Titre</label>
+            <input ng-model="service.title">
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Description</label>
+            <textarea ng-model="service.description" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+          </md-input-container>
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="selected = 0;step2.completed=false">PREV
+                     ng-click="selected = 0;step2.completed=false">PRECEDENT
           </md-button>
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="step2()">NEXT
+                     ng-click="step2()">SUIVANT
           </md-button>
         </md-content>
       </md-step>
@@ -77,34 +84,50 @@
             Content Step 3
           </h1>
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="selected = 1;step3.completed=false">PREV
+                     ng-click="selected = 1;step3.completed=false">PRECEDENT
           </md-button>
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="step3()">NEXT
+                     ng-click="step3()">SUIVANT
           </md-button>
         </md-content>
       </md-step>
       <md-step label="Payement" md-complete="step4.completed" ng-disabled="step4.disabled">
-        <md-content>
-          <h1>
-            Content Step 4
-          </h1>
+        <md-content style="padding: 50px;">
+
+          <md-radio-group ng-model="service.price_type" class="md-primary">
+
+            <md-radio-button value="espece">Espéce</md-radio-button>
+            <md-radio-button value="Cheque"> Cheque</md-radio-button>
+            <md-radio-button value="Carte">Carte Crédit</md-radio-button>
+
+          </md-radio-group>
+
+          <md-input-container class="md-icon-float md-icon-right md-block">
+            <label>Prix</label>
+            <input ng-model="service.price" type="number" step="0.01">
+            <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+          </md-input-container>
+
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="selected = 2;step4.completed=false">PREV
+                     ng-click="selected = 2;step4.completed=false">PRECEDENT
           </md-button>
           <md-button class="md-raised md-primary" style="background-color:#f30;"
-                     ng-click="step4()">NEXT
+                     ng-click="step4()">SUIVANT
           </md-button>
         </md-content>
       </md-step>
       <md-step label="Finish" md-complete="step5.completed" ng-disabled="step5.disabled">
         <md-content>
           <h1>
-            Finish
+            Terminer
           </h1>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="submit()">TERMINER
+          </md-button>
         </md-content>
       </md-step>
     </md-steppers>
   </md-card>
 </div>
+
 </body>
