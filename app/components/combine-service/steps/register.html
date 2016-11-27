@@ -1,0 +1,49 @@
+<div class="row">
+    <div>
+        <div class="widget">
+            <!-- /widget heading -->
+            <div class="widget-heading">
+                <h3 class="widget-title text-dark">
+                    Créer besoin
+                </h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="widget-body">
+                <form method="post" class="m-t-30">
+                    <div class="form-group ">
+                        <label class="control-label " for="url">Titre*</label>
+                        <input ng-model="s.name" class="form-control" id="url" name="url" placeholder="service .."
+                               type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label " for="category">Catégories</label>
+                        <select class="select form-control" id="category" name="category">
+                            <option value="">Select category</option>
+                            <option ng-repeat="item in categories" value="{{item.id}}">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="Description">Description</label>
+                                <textarea ng-model="s.description" class="form-control" cols="40" id="Description"
+                                          name="Description"
+                                          rows="10"></textarea>
+                    </div>
+                    <!-- Multiple Radios -->
+
+                    <div class="form-group m-t-10">
+                        <div>
+                            <a href="#/combine-service/submit" class="btn btn-danger btn-lg" name="submit"
+                               type="submit">Suivant
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /col -->
+
+    <!--/col -->
+</div>

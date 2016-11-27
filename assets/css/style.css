@@ -6,16 +6,15 @@
 * Author: @codenpixel
 * Author URI: https://codenpixel.com
 * */
-
 @import url(https://fonts.googleapis.com/css?family=Catamaran:200,300,400,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding-top: 146px;
     background: #f5f6f7;
 }
-
 
 /******************************************
 * Typography
@@ -96,7 +95,6 @@ a {
     font-size: 21px;
     color: #25282b;
 }
-
 
 /******************************************
 * Helpers
@@ -235,7 +233,6 @@ a {
     margin: 30px 0;
     background: #ddd;
 }
-
 
 /******************************************
 * Bootstrap base tweak
@@ -595,7 +592,6 @@ a {
 .text-dark {
     color: #212121 !important;
 }
-
 
 /******************************************
 * Forms
@@ -1019,7 +1015,6 @@ label {
     background-color: #212121;
 }
 
-
 /******************************************
 * Pagination
 *******************************************/
@@ -1355,7 +1350,6 @@ label {
     border-radius: 2px;
 }
 
-
 /******************************************
 * Header
 *******************************************/
@@ -1383,7 +1377,6 @@ header .header-top-links {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
 
 /* Toplink */
 
@@ -1524,6 +1517,7 @@ header .header-top-links {
     position: relative;
     max-width: 320px;
     margin: 11px 0 5px;
+    margin-right: 13px;
 }
 
 .header .app-search a {
@@ -1697,23 +1691,28 @@ header .header-top-links {
         padding-top: 21px;
         padding-bottom: 21px;
     }
+
     .header .navigation-menu > li.last-elements .submenu {
         right: 0;
         left: auto;
     }
+
     .header .navigation-menu > li.last-elements .submenu > li.has-submenu .submenu {
         right: 100%;
         left: auto;
         margin-right: 10px;
         margin-left: 0;
     }
+
     .header .navigation-menu > li:first-of-type a {
         padding-left: 0;
     }
+
     .header .navigation-menu > li:hover a,
     .header .navigation-menu > li:hover a i {
         color: #6e8cd7;
     }
+
     .header .navigation-menu > li .submenu {
         position: absolute;
         z-index: 1000;
@@ -1731,30 +1730,36 @@ header .header-top-links {
         background-color: #fff;
         box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     }
+
     .header .navigation-menu > li .submenu.megamenu {
         width: auto;
         white-space: nowrap;
     }
+
     .header .navigation-menu > li .submenu.megamenu > li {
         display: inline-block;
         overflow: hidden;
         width: 200px;
         vertical-align: top;
     }
+
     .header .navigation-menu > li .submenu > li .submenu {
         top: 0;
         left: 100%;
         margin-top: -1px;
         margin-left: 10px;
     }
+
     .header .navigation-menu > li .submenu li {
         position: relative;
     }
+
     .header .navigation-menu > li .submenu li ul {
         margin: 0;
         padding-left: 0;
         list-style: none;
     }
+
     .header .navigation-menu > li .submenu li a {
         display: block;
         clear: both;
@@ -1762,9 +1767,11 @@ header .header-top-links {
         white-space: nowrap;
         color: #212121;
     }
+
     .header .navigation-menu > li .submenu li a:hover {
         color: #6e8cd7;
     }
+
     .header .navigation-menu > li .submenu li span {
         font-size: 10px;
         font-weight: 500;
@@ -1777,9 +1784,11 @@ header .header-top-links {
         text-transform: uppercase;
         color: #949ba1;
     }
+
     .header .navbar-toggle {
         display: none;
     }
+
     .header #navigation {
         display: block !important;
     }
@@ -1790,71 +1799,88 @@ header .header-top-links {
     .wrapper {
         margin-top: 0;
     }
+
     .page-title {
         padding-top: 5px;
     }
+
     .container {
         width: auto;
     }
+
     .header {
         box-shadow: none;
     }
+
     .header .navigation-menu {
         float: none;
         max-height: 400px;
     }
+
     .header .navigation-menu > li {
         float: none;
     }
+
     .header .navigation-menu > li > a {
         padding: 15px;
         color: #212121;
     }
+
     .header .navigation-menu > li > a i {
         display: inline-block;
         margin-right: 10px;
         margin-bottom: 0;
     }
+
     .header .navigation-menu > li > a:after {
         position: absolute;
         right: 15px;
     }
+
     .header .navigation-menu > li .submenu {
         display: none;
         margin: 0;
         padding-left: 20px;
         list-style: none;
     }
+
     .header .navigation-menu > li .submenu li a {
         position: relative;
         display: block;
         padding: 7px 20px;
         color: #212121;
     }
+
     .header .navigation-menu > li .submenu li a:hover,
     .header .navigation-menu > li.has-submenu.open > a {
         color: #6e8cd7;
     }
+
     .header .navigation-menu > li .submenu li.has-submenu > a:after {
         font-family: 'Material Design Iconic Font';
         position: absolute;
         right: 30px;
         content: '\f1b4';
     }
+
     .header .navigation-menu > li .submenu.open {
         display: block;
     }
+
     .header .navigation-menu > li .submenu .submenu {
         display: none;
         list-style: none;
     }
+
     .header .navigation-menu > li .submenu .submenu.open {
         display: block;
     }
+
     .header .navigation-menu > li .submenu.megamenu > li > ul {
         padding-left: 0;
         list-style: none;
     }
+
     .header .navigation-menu > li .submenu.megamenu > li > ul > li > span {
         font-size: 11px;
         position: relative;
@@ -1863,9 +1889,11 @@ header .header-top-links {
         letter-spacing: 2px;
         text-transform: uppercase;
     }
+
     .header .navbar-header {
         float: left;
     }
+
     #navigation {
         position: absolute;
         top: 60px;
@@ -1879,6 +1907,7 @@ header .header-top-links {
         background-color: #fff;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     }
+
     #navigation.open {
         display: block;
         overflow-y: auto;
@@ -1904,17 +1933,18 @@ header .header-top-links {
         margin-top: 0;
         opacity: 1;
     }
+
     .header .navigation-menu > li.has-submenu:hover > .submenu > li.has-submenu:hover > .submenu {
         visibility: visible;
         margin-right: 0;
         margin-left: 0;
         opacity: 1;
     }
+
     .navbar-toggle {
         display: block;
     }
 }
-
 
 /******************************************
 * Footer
@@ -1949,7 +1979,6 @@ header .header-top-links {
 .footer ul li a:hover {
     color: #6e8cd7;
 }
-
 
 /******************************************
 * Widgets
@@ -2093,7 +2122,6 @@ header .header-top-links {
     box-shadow: none;
 }
 
-
 /******************************************
 * Carousel
 *******************************************/
@@ -2130,10 +2158,12 @@ header .header-top-links {
         border-top: none;
         border-right: none;
     }
+
     .carousel-tabs .tab .media {
         padding-bottom: 10px;
         border-bottom: 1px solid #eee;
     }
+
     .carousel-tabs .tab .media-left.media-middle {
         display: block;
         text-align: center;
@@ -2179,7 +2209,6 @@ a.thumbnail:hover {
 .thumb-inside .favorite a:hover i {
     color: #ec1076;
 }
-
 
 /******************************************
 * Coupons
@@ -2262,10 +2291,12 @@ a.thumbnail:hover {
     .coupon-wrapper {
         text-align: center;
     }
+
     .savings {
         max-width: 200px;
         margin: 0 auto 20px;
     }
+
     .coupon-wrapper .btn-code {
         margin: 15px auto;
     }
@@ -2455,7 +2486,6 @@ a.thumbnail:hover {
 .coupon-block .coupon-store img {
     display: block;
     width: 170px;
-    height: 70px;
     margin: auto;
 }
 
@@ -2512,7 +2542,6 @@ span.expiry_date {
     font-size: 16px;
     font-weight: 500;
 }
-
 
 /******************************************
 * Tags
@@ -2578,7 +2607,6 @@ span.expiry_date {
     color: #686868;
 }
 
-
 /******************************************
 * Newsletter subscribe
 *******************************************/
@@ -2609,7 +2637,6 @@ span.expiry_date {
     height: 44px;
     background-color: #fff;
 }
-
 
 /******************************************
 * Footer bottom
@@ -2660,7 +2687,6 @@ span.expiry_date {
 .pay-opt li a img {
     max-width: 40px;
 }
-
 
 /******************************************
 * Modal
@@ -2774,7 +2800,6 @@ span.expiry_date {
     background-color: #000;
 }
 
-
 /******************************************
 * Faq page
 *******************************************/
@@ -2822,7 +2847,6 @@ span.expiry_date {
 .faq-section .panel .panel-title > a i {
     padding-right: 8px;
 }
-
 
 /******************************************
 * Info- Icon box
@@ -2879,7 +2903,6 @@ span.expiry_date {
     padding-right: 5px;
     color: #7ab55c;
 }
-
 
 /******************************************
 * Categories menu
@@ -2977,7 +3000,6 @@ span.expiry_date {
 .sidebar-nav .dropdown.open {
     background-color: #f3f3f3;
 }
-
 
 /******************************************
 * Pricing
@@ -3270,9 +3292,11 @@ button.list-group-item:hover {
         overflow-x: hidden;
         padding-top: 65px;
     }
+
     .content-page {
         margin-left: 0 !important;
     }
+
     .navbar-nav .open .dropdown-menu {
         position: absolute;
         right: 0;
@@ -3292,11 +3316,11 @@ button.list-group-item:hover {
     .hide-phone {
         display: none;
     }
+
     .topbar-left {
         width: 70px;
     }
 }
-
 
 /******************************************
 * Blog
@@ -3545,7 +3569,6 @@ a:hover {
     background-color: #f30;
 }
 
-
 /*******************************************************************
 * Remove this part - Used for icons showcase only= Features.html
 ******************************************************************/
@@ -3601,4 +3624,8 @@ a:hover {
 
 .icon-container:hover .icon-name {
     margin-left: 45px;
+}
+
+.select-item {
+    background-color: #eeeeee;
 }

@@ -8,5 +8,7 @@ angular
 HeaderController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", "$location"];
 function HeaderController($rootScope, $scope, uiGmapGoogleMapApi, $location) {
 
-
+    $scope.goSearch = function () {
+        $location.url("/result-search");
+    }
 }

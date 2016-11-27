@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="serviceLik">
 <head>
-  <meta charset="UTF-8">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Service Lik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta content="" name="description"/>
-  <meta content="Kupons" name="author"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <link rel="shortcut icon" href="#">
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-  <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css">
-  <link href="assets/css/animsition.min.css" rel="stylesheet" type="text/css">
-  <link href="owl.carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css">
-  <!-- Theme styles -->
-  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Service Lik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="" name="description"/>
+    <meta content="Kupons" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="#">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/animsition.min.css" rel="stylesheet" type="text/css">
+    <link href="owl.carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css">
+    <!-- Theme styles -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
-<body>
+<body style="zoom: 80%">
 <toaster-container
-  toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}">
+        toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}">
 </toaster-container>
 <div ng-controller="HeaderController" ng-include="'app/components/layoutParts/header.html'"></div>
 <div ng-controller="AppController" ui-view id="wrapper"></div>
@@ -84,25 +84,25 @@
 
 
 <script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: '1690570641254401',
-      xfbml: true,
-      version: 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1690570641254401',
+            xfbml: true,
+            version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-      return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
 <script src="lib/lb-services.js"></script>
 </body>
