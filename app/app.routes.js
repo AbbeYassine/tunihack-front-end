@@ -119,6 +119,11 @@ function config($urlRouterProvider, $stateProvider, componentsUrl) {
             templateUrl: componentsUrl + "/combine-service/steps/submit.html",
 
         })
+        .state('combine-service.publier', {
+            url: "/publier",
+            templateUrl: componentsUrl + "/combine-service/steps/publier.html",
+
+        })
         .state('my-services', {
             url: "/my-services",
             templateUrl: componentsUrl + "/my-services/my-services.html",

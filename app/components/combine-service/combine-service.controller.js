@@ -6,36 +6,38 @@ angular
     .module("serviceLik")
     .controller("CombineServiceController", CombineServiceController);
 
-CombineServiceController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", "$location", "Service", "Category"];
-function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $location, Service, Category) {
+CombineServiceController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", "$location", "Service", "Category", "Country"];
+function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $location, Service, Category, Country) {
 
     $scope.categories = [];
     Category.find({}).$promise.then(function (data) {
         console.log(data);
         $scope.categories = data;
     });
-    /*Service.find({}).$promise.then(function (data) {
-     $scope.services = data;
-     console.log(data);
-     });*/
+    Service.find({}).$promise.then(function (data) {
+        $scope.services = data;
+        console.log(data);
+    });
 
-    $scope.services = [{
-        name: "service1",
-        description: "service1",
-        price: 3000,
-        selected: false
-    }, {
-        name: "service2",
-        description: "service1",
-        price: 2000,
-        selected: false
-    }, {
-        name: "service3",
-        description: "service1",
-        price: 1500, selected: false
-    }];
+    $scope.s = {};
+    $scope.nextStep = function () {
+        Service.prepareService({
+            name: $scope.s.name,
+            description: $scope.s.description,
+            categoriesIds: [$scope.s.category]
+        }).$promise.then(function (data) {
+            $scope.id = data.id;
+        });
+        $location.url("/combine-service/submit");
+    };
     $scope.price = 0;
     $scope.selectItem = function (index) {
+        Service.useServiceCombined({
+            serviceId: $scope.services[index].id,
+            combinedServiceId: $scope.id
+        }).$promise.then(function (data) {
+            console.log(data);
+        });
         $scope.services[index].selected = true;
         $scope.price += $scope.services[index].price;
     };
@@ -44,12 +46,24 @@ function CombineServiceController($rootScope, $scope, uiGmapGoogleMapApi, $locat
         $scope.price -= $scope.services[index].price;
     };
 
-    $scope.addService = function () {
-        Service.prepareService({
-            name: $scope.s.name,
-            description: $scope.s.description,
-            categoriesIds: []
-        })
+    $scope.publier = function () {
+        $location.url("/combine-service/publier");
     };
+
+
+    Country.find({
+        filter: {
+            include: ["cities"]
+        }
+    }).$promise.then(function (data) {
+        $scope.countries = data
+    });
+
+    $scope.changeCountry = function (index) {
+        console.log(index);
+        $scope.cities = $scope.countries[$scope.service.country].cities;
+
+    };
+
 
 }

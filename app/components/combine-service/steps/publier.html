@@ -1,0 +1,60 @@
+<div class="row">
+    <div>
+        <div class="widget">
+            <!-- /widget heading -->
+            <div class="widget-body">
+                <form method="post" class="m-t-30">
+                    <div class="form-group ">
+                        <label class="control-label " for="url">price</label>
+                        <input ng-model="s.price" class="form-control" id="url" name="url" placeholder="service .."
+                               type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label " for="country">Country</label>
+                        <select ng-model="s.country" class="select form-control" id="country" name="category">
+                            <option value="">Select category</option>
+                            <option ng-change="changeCountry()" ng-repeat="item in countries track by $index"
+                                    value="{{$index}}">
+                                {{item.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label " for="city">City</label>
+                        <select ng-model="s.city" class="select form-control" id="city" name="category">
+                            <option value="">Select category</option>
+                            <option ng-repeat="item in cities" value="{{item.id}}">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="url">start date</label>
+                        <input ng-model="s.startDate" class="form-control" id="startDate" name="url"
+                               placeholder="service .."
+                               type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="url">start date</label>
+                        <input ng-model="s.endDate" class="form-control" id="endDate" name="url"
+                               placeholder="service .."
+                               type="text"/>
+                    </div>
+                    <!-- Multiple Radios -->
+
+                    <div class="form-group m-t-10">
+                        <div>
+                            <a href ng-click="nextStep()" class="btn btn-danger btn-lg"
+                               name="submit"
+                               type="submit">Suivant
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /col -->
+
+    <!--/col -->
+</div>

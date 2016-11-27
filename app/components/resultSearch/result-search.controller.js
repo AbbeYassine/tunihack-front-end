@@ -10,4 +10,12 @@ ResultSearchController.$inject = ["$rootScope", "$scope", "uiGmapGoogleMapApi", 
 function ResultSearchController($rootScope, $scope, uiGmapGoogleMapApi, $location, Service) {
 
 
+    $scope.search = function (params) {
+        Service.find({$text: {$search: params.name}}).$promise.then(function (data) {
+            console.log(data);
+        });
+    };
+    
+    $scope.search($location.search());
+
 }

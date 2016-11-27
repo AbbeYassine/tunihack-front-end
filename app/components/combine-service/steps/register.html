@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label " for="category">Catégories</label>
-                        <select class="select form-control" id="category" name="category">
+                        <select ng-model="s.category" class="select form-control" id="category" name="category">
                             <option value="">Select category</option>
                             <option ng-repeat="item in categories" value="{{item.id}}">{{item.name}}</option>
                         </select>
@@ -32,7 +32,8 @@
 
                     <div class="form-group m-t-10">
                         <div>
-                            <a href="#/combine-service/submit" class="btn btn-danger btn-lg" name="submit"
+                            <a href ng-click="nextStep()" class="btn btn-danger btn-lg"
+                               name="submit"
                                type="submit">Suivant
                             </a>
                         </div>
