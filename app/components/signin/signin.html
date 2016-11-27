@@ -44,7 +44,7 @@
                   <label class="string optional" for="password">PASSWORD*</label>
                   <input class="string optional" maxlength="255" name="password" id="password"
                          placeholder="PASSWORD" type="password" size="50" ng-model="user.password"/>
-                  <span class="hide-password">"SHOW"</span>
+                  <span class="hide-password">SHOW</span>
                 </div>
               </div>
               <div class="simform__actions">
@@ -52,7 +52,7 @@
                 <input type="submit" class="submit" name="signin" value="SIGNIN" ng-click="submit()"/>
 
                 <span class="simform__actions-sidetext">
-                <input type="checkbox" name="remember" id="remember" class="checkbox-style"/>&nbsp;
+                <input type="checkbox" name="remember" id="remember" class="checkbox-style" ng-model="user.remember_me"/>&nbsp;
                 <label for="remember"></label>
                 <span class="checkboxText">Remember me</span>
               </span>

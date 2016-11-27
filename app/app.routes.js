@@ -57,6 +57,22 @@ function config($urlRouterProvider, $stateProvider, componentsUrl) {
         }]
       }
     })
+    .state('create-service', {
+      url: "/create-service",
+      templateUrl: componentsUrl + "/create-service/create-service.html",
+      controller: "CreateServiceController",
+      resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'serviceLik',
+            insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+            files: [
+              componentsUrl + '/create-service/create-service.controller.js'
+            ]
+          });
+        }]
+      }
+    })
 
 
 }

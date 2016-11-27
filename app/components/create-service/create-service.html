@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="initial-scale=1, width=device-width"/>
+
+  <link rel="stylesheet" href="/bower_components/md-steppers/dist/md-steppers.css">
+  <link rel="stylesheet" href="/bower_components/md-steppers/dist/demo/style.css">
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
+
+
+</head>
+<body>
+
+<!--markup-->
+<div style="text-align: center;margin-top: 200px">
+  <md-card ng-init="selected = 0">
+    <md-toolbar>
+      <div class="md-toolbar-tools" style="background-color: #f30">
+        <h2 style="color: white">
+          <md-icon md-svg-icon="md-menu"></md-icon>
+          <span>Créer un service</span>
+        </h2>
+      </div>
+    </md-toolbar>
+    <md-steppers md-selected="selected" md-stretch-steppers="always">
+      <md-step label="Service" md-complete="step1.completed" ng-disabled="step1.disabled">
+        <md-content>
+          <h1>
+            Content Step 1
+          </h1>
+
+          <div class="row">
+            <!-- Select Basic -->
+            <div class="form-group col-sm-6 col-xs-12">
+              <label class="control-label " for="category">Select category</label>
+              <select class="select form-control" id="category" name="category">
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Kids">Kids</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-6 col-xs-12">
+              <label class="control-label " for="store">Select a store</label>
+              <select class="select form-control" id="store" name="store">
+                <option value="Shopname">Shopname</option>
+                <option value="Ebay">Ebay</option>
+                <option value="Ebay">Shopname</option>
+                <option value="Ebay">Hostgator</option>
+                <option value="Ebay">Ebay</option>
+                <option value="Bangdoo">Bangdoo</option>
+              </select>
+            </div>
+          </div>
+          
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="step1()">NEXT
+          </md-button>
+        </md-content>
+      </md-step>
+      <md-step label="Détails" md-complete="step2.completed" ng-disabled="step2.disabled">
+        <md-content>
+          <h1>
+            Content Step 2
+          </h1>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="selected = 0;step2.completed=false">PREV
+          </md-button>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="step2()">NEXT
+          </md-button>
+        </md-content>
+      </md-step>
+      <md-step label="Photo" md-complete="step3.completed" ng-disabled="step3.disabled">
+        <md-content>
+          <h1>
+            Content Step 3
+          </h1>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="selected = 1;step3.completed=false">PREV
+          </md-button>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="step3()">NEXT
+          </md-button>
+        </md-content>
+      </md-step>
+      <md-step label="Payement" md-complete="step4.completed" ng-disabled="step4.disabled">
+        <md-content>
+          <h1>
+            Content Step 4
+          </h1>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="selected = 2;step4.completed=false">PREV
+          </md-button>
+          <md-button class="md-raised md-primary" style="background-color:#f30;"
+                     ng-click="step4()">NEXT
+          </md-button>
+        </md-content>
+      </md-step>
+      <md-step label="Finish" md-complete="step5.completed" ng-disabled="step5.disabled">
+        <md-content>
+          <h1>
+            Finish
+          </h1>
+        </md-content>
+      </md-step>
+    </md-steppers>
+  </md-card>
+</div>
+</body>

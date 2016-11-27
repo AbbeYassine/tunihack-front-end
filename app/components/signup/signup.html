@@ -36,6 +36,14 @@
               <div class="sminputs">
                 <div class="input full">
                   <label class="string optional" for="username">
+                    NAME*
+                  </label>
+                  <input class="string optional" maxlength="255" name="username" id="name"
+                         placeholder="NAME" type="text" size="50"
+                         ng-model="user.name"/>
+                </div>
+                <div class="input full">
+                  <label class="string optional" for="username">
                     USERNAME*
                   </label>
                   <input class="string optional" maxlength="255" name="username" id="username"
@@ -63,6 +71,13 @@
                          size="50" ng-model="user.re_password"/>
                 </div>
 
+                <div class="input string optional">
+                  <label class="string optional" for="password">
+                    PHONE*
+                  </label>
+                  <input class="string optional" minlength="8" name="phone" id="phone"
+                         placeholder="PHONE" type="number" size="8" ng-model="user.phone"/>
+                </div>
               </div>
 
               <div class="sminputs">
